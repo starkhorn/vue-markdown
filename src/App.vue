@@ -1,24 +1,24 @@
 <style scope>
-  #editor td {
-    vertical-align: top;
-  }
+#editor td {
+  vertical-align: top;
+}
 </style>
 
 <template>
-  <div id="app">
-    <h1>Markdown Editor</h1>
+<div id="app">
+  <h1>Markdown Editor</h1>
 
-    <MarkdownEditor></MarkdownEditor>
-  </div>
+  <MarkdownEditor></MarkdownEditor>
+</div>
 </template>
 
 <script>
-  import MarkdownEditor from './components/MarkdownEditor'
+import MarkdownEditor from './components/MarkdownEditor'
 
-  export default {
+export default {
 
-    components: {
-      MarkdownEditor
-    }
+  components: {
+    MarkdownEditor
   }
+}
 </script>
