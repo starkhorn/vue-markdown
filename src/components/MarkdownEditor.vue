@@ -10,7 +10,7 @@
       <tbody>
         <tr>
           <td>
-            <textarea cols="100" rows="20" v-model="rawContent">
+            <textarea cols="100" rows="20" v-model="content">
             </textarea>
           </td>
           <td>
@@ -19,25 +19,27 @@
         </tr>
       </tbody>
     </table>
-
-    <button @click="preview">Preview</button>
   </div>
 </template>
 
 <script>
+  import MarkdownIt from 'markdown-it'
+
+  const md = new MarkdownIt({
+    breaks: true
+  })
+
   export default {
 
     data () {
       return {
-        rawContent: '',
-        renderedContent: ''
+        content: ''
       }
     },
 
-    methods: {
-      preview () {
-        // TODO: transform raw content to rendered
-        this.renderedContent = this.rawContent
+    computed: {
+      renderedContent () {
+        return md.render(this.content)
       }
     }
   }
